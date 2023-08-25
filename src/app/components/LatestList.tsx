@@ -1,5 +1,7 @@
 import Image, { StaticImageData } from "next/image";
-import HoldingHands from "../../../public/assets/component-01/Image-01@2x.jpg";
+import FoodOne from "../../../public/assets/component-02/Image-01@2x.jpg";
+import FoodTwo from "../../../public/assets/component-02/Image-02@2x.jpg";
+import FoodThree from "../../../public/assets/component-02/Image-03@2x.jpg";
 
 type ListItem = {
   image: StaticImageData;
@@ -11,19 +13,19 @@ type ListItem = {
 export default function LatestList() {
   const listItems: ListItem[] = [
     {
-      image: HoldingHands,
+      image: FoodOne,
       imageAlt: "asd",
       title: "Summer Lunch Menu By Mark Best",
       description: "AEG ambassador Mark Best's summer eats are guaranteed to help you make the most of the warmer weather and entertaining at home."
     },
     {
-      image: HoldingHands,
+      image: FoodTwo,
       imageAlt: "asd",
       title: "Summer Lunch Menu By Mark Best",
       description: "AEG ambassador Mark Best's summer eats are guaranteed to help you make the most of the warmer weather and entertaining at home."
     },
     {
-      image: HoldingHands,
+      image: FoodThree,
       imageAlt: "asd",
       title: "Summer Lunch Menu By Mark Best",
       description: "AEG ambassador Mark Best's summer eats are guaranteed to help you make the most of the warmer weather and entertaining at home."
@@ -33,17 +35,21 @@ export default function LatestList() {
   return (
     <div className="flex gap-5">
       {listItems.map((item: ListItem, index: number) => (
-        <div className="item" key={index}>
-          <Image
-            src={item.image}
-            alt={item.imageAlt}
-          />
-          <div className="content">
-            <h4 className="text-[18px]">{item.title}</h4>
-            <p className="text-[14px] text-neutral-300">{item.description}</p>
-            <button>READ MORE</button>
+        <a href="/" key={index}>
+          <div className="item">
+            <Image
+              src={item.image}
+              alt={item.imageAlt}
+            />
+            <div className="content">
+              <h4 className="text-[18px] text-white mt-5">{item.title}</h4>
+              <p className="text-[14px] text-neutral-400 font-light mt-3">{item.description}</p>
+              <button className="mt-5 text-white border-b border-rose-500 pb-1">
+                READ MORE
+              </button>
+            </div>
           </div>
-        </div>
+        </a>
       ))}
       <div></div>
     </div>
