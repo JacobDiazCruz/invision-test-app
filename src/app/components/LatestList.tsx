@@ -30,7 +30,7 @@ export default function LatestList() {
 
   return (
     <section className="mt-[200px]">
-      <h1 className="text-center font-light text-[32px] mb-12 text-white">
+      <h1 className="text-center font-light text-[42px] mb-12 text-neutral-50">
         ALL THE LATEST FROM AEG
       </h1>
       <div className="flex gap-5">
