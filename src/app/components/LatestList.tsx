@@ -33,25 +33,30 @@ export default function LatestList() {
   ];
 
   return (
-    <div className="flex gap-5">
-      {listItems.map((item: ListItem, index: number) => (
-        <a href="/" key={index}>
-          <div className="item">
-            <Image
-              src={item.image}
-              alt={item.imageAlt}
-            />
-            <div className="content">
-              <h4 className="text-[18px] text-white mt-5">{item.title}</h4>
-              <p className="text-[14px] text-neutral-400 font-light mt-3">{item.description}</p>
-              <button className="mt-5 text-white border-b border-rose-500 pb-1">
-                READ MORE
-              </button>
+    <section className="mt-[200px]">
+      <h1 className="text-center font-light text-[32px] mb-12 text-white">
+        ALL THE LATEST FROM AEG
+      </h1>
+      <div className="flex gap-5">
+        {listItems.map((item: ListItem, index: number) => (
+          <a href="/" key={index}>
+            <div className="item">
+              <Image
+                src={item.image}
+                alt={item.imageAlt}
+              />
+              <div className="content">
+                <h4 className="text-[18px] text-white mt-5">{item.title}</h4>
+                <p className="text-[14px] text-neutral-400 font-light mt-3">{item.description}</p>
+                <button className="mt-5 text-white border-b border-rose-500 pb-1">
+                  READ MORE
+                </button>
+              </div>
             </div>
-          </div>
-        </a>
-      ))}
-      <div></div>
-    </div>
+          </a>
+        ))}
+        <div></div>
+      </div>
+    </section>
   );
 };
