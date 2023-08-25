@@ -36,15 +36,22 @@ export default function LatestList() {
       <div className="flex gap-5">
         {listItems.map((item: ListItem, index: number) => (
           <a href="/" key={index}>
-            <div className="item">
-              <Image
-                src={item.image}
-                alt={item.title}
-              />
+            <div className="item w-[420px]">
+              <div className="w-full h-[300px] relative border-b-[3px] border-rose-700">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                />
+              </div>
               <div className="content">
-                <h4 className="text-[18px] text-white mt-5">{item.title}</h4>
-                <p className="text-[14px] text-neutral-400 font-light mt-3">{item.description}</p>
-                <button className="mt-5 text-white border-b border-rose-500 pb-1">
+                <h4 className="text-[18px] text-white mt-7">
+                  {item.title}
+                </h4>
+                <p className="text-neutral-400 leading-7 font-light mt-3">
+                  {item.description}
+                </p>
+                <button className="mt-5 text-white border-b border-rose-700 pb-1">
                   READ MORE
                 </button>
               </div>
