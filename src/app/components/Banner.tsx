@@ -1,32 +1,52 @@
+"use client";
+
+import { useState } from "react";
 import { sectionOne } from "@/config/contents";
 import Image, { StaticImageData } from "next/image";
+import Modal from "./Modal";
 
 type ImageItem = {
   alt: string;
-  src: StaticImageData;
+  src: {
+    sm: StaticImageData,
+    lg: StaticImageData
+  };
 };
 
 export default function Banner() {
   const images: ImageItem[] = sectionOne.images;
 
+  const [showFullImage, setShowFullImage] = useState<boolean>(false);
+  const [currentSelectedImage, setCurrentSelectedImage] = useState<StaticImageData>();
+
+  const handleFullImage = (src: StaticImageData) => {
+    setShowFullImage(true)
+    setCurrentSelectedImage(src)
+  }
+
   return (
-    <div className="flex flex-col md:flex-row gap-7">
-      <div className="flex flex-col md:flex-row gap-5 w-full md:w-[850px]">
+    <div className="flex flex-col md:flex-row gap-5">
+      <div className="flex flex-col md:flex-row gap-5 w-full md:w-[800px]">
         <div>
           <Image 
             alt={images[0].alt}
-            src={images[0].src}
+            src={images[0].src.sm}
+            onClick={() => handleFullImage(images[0].src.lg)}
+            className="cursor-pointer"
           />
         </div>
         <div>
           <Image
             alt={images[1].alt}
-            src={images[1].src}
+            src={images[1].src.sm}
+            onClick={() => handleFullImage(images[1].src.lg)}
+            className="cursor-pointer"
           />
           <Image
             alt={images[2].alt}
-            src={images[2].src}
-            className="mt-5"
+            src={images[2].src.sm}
+            onClick={() => handleFullImage(images[2].src.lg)}
+            className="cursor-pointer mt-5"
           />
         </div>
       </div>
@@ -44,6 +64,16 @@ export default function Banner() {
           </div>
         ))}
       </div>
+      
+      {/* Full image modal */}
+      {showFullImage && (
+        <Modal onClose={() => setShowFullImage(false)}>
+          <Image 
+            alt=""
+            src={currentSelectedImage || ""}
+          />
+        </Modal>
+      )}
     </div>
   );
 };

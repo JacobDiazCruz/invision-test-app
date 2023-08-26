@@ -1,24 +1,37 @@
-import HoldingHands from "../../public/assets/component-01/Image-01@2x.jpg";
-import Veggies from "../../public/assets/component-01/Image-02@2x.jpg";
-import Veggie from "../../public/assets/component-01/Image-03@2x.jpg";
+import SmHoldingHands from "../../public/assets/component-01/Image-01.jpg";
+import SmVeggies from "../../public/assets/component-01/Image-02.jpg";
+import SmVeggie from "../../public/assets/component-01/Image-03.jpg";
 
-import FoodOne from "../../public/assets/component-02/Image-01@2x.jpg";
-import FoodTwo from "../../public/assets/component-02/Image-02@2x.jpg";
-import FoodThree from "../../public/assets/component-02/Image-03@2x.jpg";
+import LgHoldingHands from "../../public/assets/component-01/Image-01@2x.jpg";
+import LgVeggies from "../../public/assets/component-01/Image-02@2x.jpg";
+import LgVeggie from "../../public/assets/component-01/Image-03@2x.jpg";
+
+import FoodOne from "../../public/assets/component-02/Image-01.jpg";
+import FoodTwo from "../../public/assets/component-02/Image-02.jpg";
+import FoodThree from "../../public/assets/component-02/Image-03.jpg";
 
 export const sectionOne = {
   title: "ANSWER YOUR BODY'S NEEDS",
   images: [
     {
-      src: HoldingHands,
+      src: {
+        sm: SmHoldingHands,
+        lg: LgHoldingHands
+      },
       alt: "Holding hands"
     },
     {
-      src: Veggies,
+      src: {
+        sm: SmVeggies,
+        lg: LgVeggies
+      },
       alt: "Veggies"
     },
     {
-      src: Veggie,
+      src: {
+        sm: SmVeggie,
+        lg: LgVeggie
+      },
       alt: "Veggie"
     }
   ],
