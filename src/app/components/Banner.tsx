@@ -28,7 +28,7 @@ export default function Banner() {
     <div className="flex flex-col md:flex-row gap-5">
       <div className="flex flex-col md:flex-row gap-5 w-full md:w-[800px]">
         <div>
-          <Image 
+          <Image
             alt={images[0].alt}
             src={images[0].src.sm}
             onClick={() => handleFullImage(images[0].src.lg)}
@@ -50,16 +50,19 @@ export default function Banner() {
           />
         </div>
       </div>
-      <div className="text font-light w-full md:w-[400px]">
-        <h1 className="text-[22px] text-neutral-100">{sectionOne.title}</h1>
-        <hr className="mb-7 mt-3"/>
+
+      <div className="text w-full md:w-[400px]">
+        <h1 className="text-[26px] text-neutral-100 font-extralight">
+          {sectionOne.title}
+        </h1>
+        <hr className="mt-3"/>
         {sectionOne.body.map((body, index: number) => (
-          <div className="mt-5" key={index}>
-            <h4 className="text-rose-700 font-semibold mt-10">
+          <div key={index}>
+            <h4 className="text-rose-700 font-semibold mt-7">
               {body.subTitle}
             </h4>
-            <p className="text-[18px] mt-5 font-light text-neutral-300 line-clamp-10 leading-8">
-              {body.paragraph}
+            <p className={`text-[18px] mt-3 ${body.paragraph.fontWeightClass} ${body.paragraph.fontColorClass} line-clamp-10 leading-8`}>
+              {body.paragraph.value}
             </p>
           </div>
         ))}
@@ -67,7 +70,7 @@ export default function Banner() {
       
       {/* Full image modal */}
       <Modal 
-        open={showFullImage} 
+        open={showFullImage}
         onClose={() => setShowFullImage(false)}
       >
         <Image

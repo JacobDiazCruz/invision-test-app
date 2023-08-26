@@ -23,7 +23,7 @@ export default function LatestList() {
 
   return (
     <section className="mt-[200px]">
-      <h1 className="md:text-center font-light text-[24px] md:text-[42px] mb-12 text-neutral-50">
+      <h1 className="md:text-center font-extralight text-[24px] md:text-[42px] mb-12 text-neutral-50">
         {sectionTwo.title}
       </h1>
       <div className="flex flex-col md:flex-row gap-5">
