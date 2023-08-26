@@ -14,6 +14,10 @@ type ImageItem = {
   };
 };
 
+/**
+ * @note This component is configurable because it populates data from 
+ * the "contents" file, emulating a CMS format.
+ */
 export default function Banner() {
   const images: ImageItem[] = sectionOne.images;
 

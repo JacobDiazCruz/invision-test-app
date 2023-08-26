@@ -13,6 +13,10 @@ type ListItem = {
   }
 };
 
+/**
+ * @note This component is configurable because it populates data from
+ * the "contents" file, emulating a CMS format.
+ */
 export default function LatestList() {
   const listItems: ListItem[] = sectionTwo.listItems;
 

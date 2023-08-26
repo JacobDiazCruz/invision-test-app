@@ -18,7 +18,7 @@ export default function Fade({
         className={`${
           isVisible
             ? "opacity-100 transform translate-y-0 transition-opacity transition-transform"
-            : "opacity-0 transform translate-y-4 transition-opacity transition-transform"
+            : "opacity-0 transform translate-y-6 transition-opacity transition-transform"
         } duration-500 ease-in-out`}
       >
         {children}

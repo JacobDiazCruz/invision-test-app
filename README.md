@@ -1,34 +1,12 @@
-# Interface Development Test
+# Thinking process
 
-## Design assets
-* Invision public URL: https://invis.io/N312IJ0C8GMK
-* Assets used in the build have been packaged under the `/assets` folder.
+## Framework
+I have selected Next.js as the framework for this project primarily due to its convenience in building hybrid applications that incorporate both server-side rendering (SSR) and single-page application (SPA) features, making it SEO-friendly. Additionally, the ease of setting up the boilerplate and my proficiency in using React.js were also important factors influencing my decision.
+## Configurability
+I have made the decision to make the homepage configurable via retrieving some component's content from the `config/contents.ts` file. Although this process isn't strictly necessary for this exam, it serves to demonstrate my proficiency in understanding how configurability works, particularly in scenarios involving CMS or other processes that require handling dynamic content.
 
-## Test instructions
-In the linked Invision page you will find the designs for two components. Complete the following:
-* The code should be submitted via a github account. Bonus points for more than one commit.
-* Build the two blocks using modern HTML5 standards.
-* Use JavaScript to capture all anchor clicks, and `console.log()` the element which has been clicked.
-* As with any modern web-build we expect a level of interactivity/animation to be displayed on the nodes.
-* All content areas should be deemed as being populated from a CMS - so all copy lengths can vary!
+## Styles
+I opted not to use CSS-in-JS tools due to potential performance overhead on components that render heavy styling. Instead, I have utilized Tailwind CSS, which functions solely as a CSS utility and offers a wide variety of shortcuts, all without requiring any JavaScript configuration. The only tradeoff I have encountered is a slight reduction in readability, particularly for developers who are using Tailwind for the first time.
 
-## Technologies
-* Any CSS-preprocessors or frameworks.
-* ES5 or ES6+ acceptable.
-* Please include some reasoning for the decisions via comments or readme.
-* Build tools and task runners are encouraged (e.g. grunt/gulp/webpack).
-
-## Layout
-* The layout is expected to work in the latest Chrome/FireFox/Edge versions.
-* The layout should be responsive and work down to a `320px` mobile device.
-* Bearing in mind that this application is expected to be responsive, the developer should consider the appropriate `<meta>` tags.
-* **Section: All the latest:** Assume these items need anchor tags, but have no link defined.
-* **Section: Answer your body's needs:** Each image in this section should display in a modal on click.
-
-## Review Criteria
-We are looking for your ability to bring life to static designs. During that process consider the following:
-* **Project structure:** Clean project and logical traversal.
-* **JavaScript:** Efficiency of code and efficacy in bringing the design to life.
-* **Interface:** Semantic markup styling.
-* **Git:** Bonus points for submission on a github account showing multiple commits.
-* **Quality:** Production-grade build and precision.
+## Animation
+Regarding the animation, I made a deliberate decision to add a very simple fade animation in the first section of the homepage. I am aware of the potential performance overhead that could arise if animations are not optimized correctly. While I recognize that there is room for improvement in enhancing the fade animation, for the purpose of this test, I opted to just implement a subtle fade effect. This choice was made with the intention of striking a balance between demonstrating animation capability and ensuring optimal performance.
