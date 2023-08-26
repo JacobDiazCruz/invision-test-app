@@ -10,8 +10,8 @@ export default function Banner() {
   const images: ImageItem[] = sectionOne.images;
 
   return (
-    <div className="flex gap-7">
-      <div className="flex gap-5 w-[850px]">
+    <div className="flex flex-col md:flex-row gap-7">
+      <div className="flex flex-col md:flex-row gap-5 w-full md:w-[850px]">
         <div>
           <Image 
             alt={images[0].alt}
@@ -19,7 +19,7 @@ export default function Banner() {
           />
         </div>
         <div>
-          <Image 
+          <Image
             alt={images[1].alt}
             src={images[1].src}
           />
@@ -30,7 +30,7 @@ export default function Banner() {
           />
         </div>
       </div>
-      <div className="text font-light w-[400px]">
+      <div className="text font-light w-full md:w-[400px]">
         <h1 className="text-[22px] text-neutral-100">{sectionOne.title}</h1>
         <hr className="mb-7 mt-3"/>
         {sectionOne.body.map((body, index: number) => (
