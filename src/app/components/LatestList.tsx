@@ -1,3 +1,5 @@
+"use client";
+
 import { sectionTwo } from "@/config/contents";
 import Image, { StaticImageData } from "next/image";
 
@@ -14,6 +16,11 @@ type ListItem = {
 export default function LatestList() {
   const listItems: ListItem[] = sectionTwo.listItems;
 
+  const handleAnchorClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    const clickedElement = event.currentTarget;
+    console.log(clickedElement);
+  };
+
   return (
     <section className="mt-[200px]">
       <h1 className="md:text-center font-light text-[24px] md:text-[42px] mb-12 text-neutral-50">
@@ -21,7 +28,11 @@ export default function LatestList() {
       </h1>
       <div className="flex flex-col md:flex-row gap-5">
         {listItems.map((item: ListItem, index: number) => (
-          <a href={item.button.link} key={index}>
+          <a 
+            key={index} 
+            onClick={handleAnchorClick} 
+            className="cursor-pointer"
+          >
             <div className="item w-full md:w-[420px]">
               <div className="w-full h-[300px] relative border-b-[3px] border-rose-700">
                 <Image
