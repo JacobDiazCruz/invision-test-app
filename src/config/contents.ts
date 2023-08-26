@@ -9,9 +9,18 @@ import FoodThree from "../../public/assets/component-02/Image-03@2x.jpg";
 export const sectionOne = {
   title: "ANSWER YOUR BODY'S NEEDS",
   images: [
-    HoldingHands,
-    Veggies,
-    Veggie
+    {
+      src: HoldingHands,
+      alt: "Holding hands"
+    },
+    {
+      src: Veggies,
+      alt: "Veggies"
+    },
+    {
+      src: Veggie,
+      alt: "Veggie"
+    }
   ],
   body: [
     {
