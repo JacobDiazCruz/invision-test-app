@@ -33,7 +33,7 @@ export default function LatestList() {
             onClick={handleAnchorClick} 
             className="cursor-pointer"
           >
-            <div className="item w-full md:w-[420px]">
+            <div className="item w-full md:w-[400px]">
               <div className="w-full h-[300px] relative border-b-[3px] border-rose-700">
                 <Image
                   src={item.image}
