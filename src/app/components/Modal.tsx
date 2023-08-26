@@ -1,25 +1,17 @@
 interface ModalProps {
   onClose: () => void;
-  className?: string;
-  persist?: boolean;
   children: React.ReactNode;
 };
 
 export default function Modal({
   onClose,
-  className,
-  persist,
   children
 }: ModalProps) {
   return (
     <>
       <div
         className="fixed inset-0 w-full h-full dark:bg-neutral-500 bg-darkTheme-950 opacity-60 z-[600]"
-        onClick={() => {
-          if(!persist) {
-            onClose();
-          }
-        }}
+        onClick={onClose}
       ></div>
       <div
         className={`
