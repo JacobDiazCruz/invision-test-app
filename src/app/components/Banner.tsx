@@ -66,14 +66,15 @@ export default function Banner() {
       </div>
       
       {/* Full image modal */}
-      {showFullImage && (
-        <Modal onClose={() => setShowFullImage(false)}>
-          <Image 
-            alt=""
-            src={currentSelectedImage || ""}
-          />
-        </Modal>
-      )}
+      <Modal 
+        open={showFullImage} 
+        onClose={() => setShowFullImage(false)}
+      >
+        <Image
+          alt=""
+          src={currentSelectedImage || ""}
+        />
+      </Modal>
     </div>
   );
 };
